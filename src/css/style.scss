@@ -1,0 +1,25 @@
+body {
+    background-color: #F9F9F9;
+    color: #2C2C2C;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: #2C2C2C;
+}
+
+.section {
+    padding: 35px;
+    margin: 0 auto;
+    max-width: 1640px;
+    min-height: 1800px;
+    &__title {
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: 400;
+    }
+    &__wrapper {
+        display: flex;
+        margin-top: 45px;
+    }
+}
