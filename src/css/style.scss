@@ -23,3 +23,15 @@ html {
         margin-top: 45px;
     }
 }
+
+.filter {
+    margin-right: 30px;
+    width: 370px;
+    height: 1700px;
+    border: 1px solid red;
+    &__title {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
