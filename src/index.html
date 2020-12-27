@@ -18,6 +18,38 @@
             <!-- Блок фильтров -->
             <aside class="filter">
                 <h3 class="filter__title">Filters</h3>
+
+                <!-- Фильтр по цене -->
+                <div class="filter__inner filter__inner_price">
+                    <h4 class="filter__name">Multi Range</h4>
+
+                    <div class="filter__item filter__item_price">
+                        <input class="filter__price" name="price" id="price1" min="0" max="10" type="radio">
+                        <label for="price1">$10</label>
+                    </div>
+                    
+                    <div class="filter__item filter__item_price">
+                        <input class="filter__price" name="price" id="price2" min="10" max="100" type="radio">
+                        <label for="price2">$10-$100</label>
+                    </div>
+
+                    <div class="filter__item filter__item_price">
+                        <input class="filter__price" name="price" id="price3" min="100" max="500" type="radio">
+                        <label for="price3">$100-$500</label>
+                    </div>
+
+                    <div class="filter__item filter__item_price">
+                        <input class="filter__price" name="price" id="price4" min="500" max="2500" type="radio">
+                        <label for="price4">$500</label>
+                    </div>
+
+                    <div class="filter__item filter__item_price">
+                        <input class="filter__price" name="price" id="price5" value="all" type="radio" checked>
+                        <label for="price5">All</label>
+                    </div>
+                </div>
+
+                
             </aside>
 
             <!-- Блок продуктов -->
