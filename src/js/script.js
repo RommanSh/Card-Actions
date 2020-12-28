@@ -1,3 +1,5 @@
+/* Создание карточек товара */
+
 class Card {
     constructor(src, alt, rating, price, titleProduct, descr, category, brand, parent) {
         this.src = src;
