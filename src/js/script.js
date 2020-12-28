@@ -155,3 +155,27 @@ for(let i = 0; i < cardsData.length; i++){
                     cardsData[i]['brand'],
                     '.products__cards').createCard();
 }
+
+let productsList = document.querySelector('.products__cards'),
+    cards = document.querySelectorAll('.card'),
+
+    btnCardsGrid = document.querySelector('[data-view="grid"]'),
+    btnCardsList = document.querySelector('[data-view="list"]');
+
+
+/* --- Меняем вид отображения карточек товара на странице --- */
+
+function toggleProductsListView (btn, viewRemoveClass, viewAddClass, cardRemoveClass, cardAddClass) {
+    btn.addEventListener('click', function() {
+        for(let i = 0; i < cards.length; i++) {
+            productsList.classList.remove(viewRemoveClass);
+            productsList.classList.add(viewAddClass);
+            cards[i].classList.remove(cardRemoveClass);
+            cards[i].classList.add(cardAddClass);
+        }
+    });
+}
+
+toggleProductsListView(btnCardsGrid, 'products__cards_list', 'products__cards_grid', 'card_list', 'card_grid');
+
+toggleProductsListView(btnCardsList, 'products__cards_grid', 'products__cards_list', 'card_grid', 'card_list');
