@@ -138,3 +138,17 @@ let cardsData = [
         brand: 'apple'
     }
 ];
+
+let card;
+
+for(let i = 0; i < cardsData.length; i++){
+    card = new Card(cardsData[i]['src'],
+                    cardsData[i]['alt'],
+                    cardsData[i]['rating'],
+                    cardsData[i]['price'],
+                    cardsData[i]['title'],
+                    cardsData[i]['descr'],
+                    cardsData[i]['category'],
+                    cardsData[i]['brand'],
+                    '.products__cards').createCard();
+}
