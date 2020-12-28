@@ -8,6 +8,12 @@ html {
     color: #2C2C2C;
 }
 
+button {
+    &:active,  &:focus{
+        outline: none;
+    }
+}
+
 .section {
     padding: 35px;
     margin: 0 auto;
