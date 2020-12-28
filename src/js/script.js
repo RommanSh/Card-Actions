@@ -45,3 +45,96 @@ class Card {
         this.parent.append(elem);
     }
 }
+
+let cardsData = [
+    {
+        src: 'img/apple-watch.png',
+        alt: 'apple-watch',
+        rating: '3.4',
+        price: '399',
+        title: 'Apple Watch Series 4 GPS',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'accessories',
+        brand: 'apple'
+    },
+    {
+        src: 'img/jbl-speaker.png',
+        alt: 'jbl-speaker',
+        rating: '5.0',
+        price: '199',
+        title: 'JBL Speaker',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'audio',
+        brand: 'jbl'
+    },
+    {
+        src: 'img/iphone-x.png',
+        alt: 'iphone-x',
+        rating: '4.4',
+        price: '899',
+        title: 'Apple iPhone X 128GB',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'phones',
+        brand: 'apple'
+    },
+    {
+        src: 'img/beats-headphones.png',
+        alt: 'beats-headphones',
+        rating: '3.4',
+        price: '459',
+        title: 'Beats Headphones',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'audio',
+        brand: 'apple'
+    },
+    {
+        src: 'img/macbook-pro.png',
+        alt: 'macbook-pro',
+        rating: '4.5',
+        price: '2499',
+        title: 'Apple Macbook Pro 512GB SSD',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'computers',
+        brand: 'apple'
+    },
+    {
+        src: 'img/ipad-pro.png',
+        alt: 'ipad-pro',
+        rating: '5',
+        price: '899',
+        title: 'Apple iPad Pro 64GB',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'computers',
+        brand: 'apple'
+    },
+    {
+        src: 'img/homepod.png',
+        alt: 'homepod',
+        rating: '3.3',
+        price: '399',
+        title: 'Apple Homepod',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'audio',
+        brand: 'apple'
+    },
+    {
+        src: 'img/jlab-audio-wireless.png',
+        alt: 'jlab-audio-wireless',
+        rating: '5',
+        price: '2499',
+        title: 'JBuds Air Wireless Bluetooth…',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'audio',
+        brand: 'xiaomi'
+    },
+    {
+        src: 'img/magic-mouse.png',
+        alt: 'magic-mouse',
+        rating: '4.4',
+        price: '99',
+        title: 'Apple Magic Mouse ',
+        descr: 'Redesigned from scratch and completely revised.',
+        category: 'computers',
+        brand: 'apple'
+    }
+];
