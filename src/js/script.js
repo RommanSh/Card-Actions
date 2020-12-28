@@ -17,6 +17,7 @@ class Card {
         let elem = document.createElement('div');
         elem.classList.add('card');
         elem.classList.add('card_active');
+        elem.classList.add('card_grid');
         elem.setAttribute('data-price', `${this.price}`);
         elem.setAttribute('data-rating', `${this.rating}`);
         elem.setAttribute('data-category', `${this.category}`);
