@@ -159,6 +159,8 @@ for(let i = 0; i < cardsData.length; i++){
 let productsList = document.querySelector('.products__cards'),
     cards = document.querySelectorAll('.card'),
 
+    priceInputs = document.querySelectorAll('.filter__price'),
+
     btnCardsGrid = document.querySelector('[data-view="grid"]'),
     btnCardsList = document.querySelector('[data-view="list"]'),
 
@@ -203,3 +205,53 @@ btnAddCart.forEach(function(item) {
         item.innerHTML = 'in the cart';
     });
 });
+
+/* Фильтры */
+
+/* Функция скрывает все карточки */
+
+function hiddenAllCards(cards) {
+    cards.forEach(function(item) {
+        item.classList.add('card_hidden');
+        item.classList.remove('card_active');
+    });
+}
+
+
+/* Функции показывают карточки */
+
+function showAllCards(cards) {
+    cards.forEach(function(item) {
+        item.classList.add('card_active');
+        item.classList.remove('card_hidden');
+    });
+}
+
+function showCard(card) {
+    card.classList.add('card_active');
+    card.classList.remove('card_hidden');
+}
+
+/* Фильтр по цене */
+
+function checkFilterPrice(cards) {
+    priceInputs.forEach(function(item) {
+        item.addEventListener('change', () => {
+            if(item.value == 'all') {
+                showAllCards(cards);
+            } else {
+                hiddenAllCards(cards);
+                let min = +item.min;
+                let max = +item.max;
+    
+                cards.forEach(function(item) {
+                    if(item.getAttribute('data-price') > min && item.getAttribute('data-price') < max) {
+                        showCard(item);
+                    }
+                });
+            }
+        });
+    });
+}
+
+checkFilterPrice(cards);
