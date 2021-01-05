@@ -162,7 +162,8 @@ let productsList = document.querySelector('.products__cards'),
     btnCardsGrid = document.querySelector('[data-view="grid"]'),
     btnCardsList = document.querySelector('[data-view="list"]'),
 
-    btnWishList = document.querySelectorAll('.card__button_wish');
+    btnWishList = document.querySelectorAll('.card__button_wish'),
+    btnAddCart = document.querySelectorAll('.card__button_cart');
 
 /* --- Меняем вид отображения карточек товара на странице --- */
 
@@ -194,3 +195,11 @@ function toggleClassWishlist(class1, class2) {
 }
 
 toggleClassWishlist('wish_none', 'wish_active');
+
+/* --- Карточка товара. Событие клика по кнопке add to cart --- */
+
+btnAddCart.forEach(function(item) {
+    item.addEventListener('click', ()=> {
+        item.innerHTML = 'in the cart';
+    });
+});
