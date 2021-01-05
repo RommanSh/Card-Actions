@@ -160,8 +160,9 @@ let productsList = document.querySelector('.products__cards'),
     cards = document.querySelectorAll('.card'),
 
     btnCardsGrid = document.querySelector('[data-view="grid"]'),
-    btnCardsList = document.querySelector('[data-view="list"]');
+    btnCardsList = document.querySelector('[data-view="list"]'),
 
+    btnWishList = document.querySelectorAll('.card__button_wish');
 
 /* --- Меняем вид отображения карточек товара на странице --- */
 
@@ -179,3 +180,17 @@ function toggleProductsListView (btn, viewRemoveClass, viewAddClass, cardRemoveC
 toggleProductsListView(btnCardsGrid, 'products__cards_list', 'products__cards_grid', 'card_list', 'card_grid');
 
 toggleProductsListView(btnCardsList, 'products__cards_grid', 'products__cards_list', 'card_grid', 'card_list');
+
+
+/* --- Карточка товара. Событие клика по кнопке Wishlist --- */
+
+function toggleClassWishlist(class1, class2) {
+    btnWishList.forEach(function(item) {
+        item.addEventListener('click', () => {
+            item.classList.toggle(class1);
+            item.classList.toggle(class2);
+        });
+    });
+}
+
+toggleClassWishlist('wish_none', 'wish_active');
