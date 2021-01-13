@@ -159,7 +159,9 @@ for(let i = 0; i < cardsData.length; i++){
 let productsList = document.querySelector('.products__cards'),
     cards = document.querySelectorAll('.card'),
 
+    inputs = document.querySelectorAll('input'),
     priceInputs = document.querySelectorAll('.filter__price'),
+    categoryInputs = document.querySelectorAll('.filter__category'),
 
     btnCardsGrid = document.querySelector('[data-view="grid"]'),
     btnCardsList = document.querySelector('[data-view="list"]'),
@@ -217,7 +219,6 @@ function hiddenAllCards(cards) {
     });
 }
 
-
 /* Функции показывают карточки */
 
 function showAllCards(cards) {
@@ -236,7 +237,7 @@ function showCard(card) {
 
 function checkFilterPrice(cards) {
     priceInputs.forEach(function(item) {
-        item.addEventListener('change', () => {
+        if(item.checked) {
             if(item.value == 'all') {
                 showAllCards(cards);
             } else {
@@ -250,8 +251,52 @@ function checkFilterPrice(cards) {
                     }
                 });
             }
-        });
+        }
     });
 }
 
-checkFilterPrice(cards);
+/* Фильтр по категории, бренду */
+
+function checkFilter(cards, inputName) {
+    inputName.forEach(function(item) {
+        if(item.checked) {
+            let categoryValue = item.value;
+
+            cards.forEach(function(item) {
+                if(item.getAttribute('data-category') == categoryValue) {
+                    showCard(item);
+                }
+            });
+        }
+    });
+}
+
+/* Проверка активности фильтра */
+
+function checkFilterActive(inputName) {
+    let counter = 0;
+    inputName.forEach(function(item) {
+        if(item.checked) {
+            counter += 1;
+        }
+    });
+    return counter;
+}
+
+/* Фильтр общий по всем категориям */
+
+inputs.forEach(function(item) {
+    item.addEventListener('change', () => {
+        // showAllCards(cards);
+
+        checkFilterPrice(cards);
+
+        let cardsActive = document.querySelectorAll('.card_active');
+
+        if(checkFilterActive(categoryInputs) > 0) {
+            hiddenAllCards(cards);
+            checkFilter(cardsActive, categoryInputs);
+        }
+        
+    });
+});
