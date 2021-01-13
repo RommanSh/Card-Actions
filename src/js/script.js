@@ -326,4 +326,3 @@ function clearCheckbox(inputName) {
         item.checked = false;
     });
 }
-    
