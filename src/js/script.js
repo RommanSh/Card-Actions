@@ -164,6 +164,8 @@ let productsList = document.querySelector('.products__cards'),
     categoryInputs = document.querySelectorAll('.filter__category'),
     brendInputs = document.querySelectorAll('.filter__brand'),
 
+    btnClear = document.querySelector('.filter__button'),
+
     btnCardsGrid = document.querySelector('[data-view="grid"]'),
     btnCardsList = document.querySelector('[data-view="list"]'),
 
@@ -307,3 +309,21 @@ inputs.forEach(function(item) {
     });
 });
 
+/* сброс фильтра */
+
+btnClear.addEventListener('click', function() {
+    clearCheckbox(priceInputs);
+    priceInputs[priceInputs.length - 1].checked = true;
+    clearCheckbox(categoryInputs);
+    clearCheckbox(brendInputs);
+    showAllCards(cards);
+});
+
+/* очистка чекбоксов */
+
+function clearCheckbox(inputName) {
+    inputName.forEach(function(item) {
+        item.checked = false;
+    });
+}
+    
