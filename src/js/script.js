@@ -162,6 +162,7 @@ let productsList = document.querySelector('.products__cards'),
     inputs = document.querySelectorAll('input'),
     priceInputs = document.querySelectorAll('.filter__price'),
     categoryInputs = document.querySelectorAll('.filter__category'),
+    brendInputs = document.querySelectorAll('.filter__brand'),
 
     btnCardsGrid = document.querySelector('[data-view="grid"]'),
     btnCardsList = document.querySelector('[data-view="list"]'),
@@ -257,13 +258,13 @@ function checkFilterPrice(cards) {
 
 /* Фильтр по категории, бренду */
 
-function checkFilter(cards, inputName) {
+function checkFilter(cards, inputName, dataAtribut) {
     inputName.forEach(function(item) {
         if(item.checked) {
             let categoryValue = item.value;
 
             cards.forEach(function(item) {
-                if(item.getAttribute('data-category') == categoryValue) {
+                if(item.getAttribute(dataAtribut) == categoryValue) {
                     showCard(item);
                 }
             });
@@ -287,16 +288,21 @@ function checkFilterActive(inputName) {
 
 inputs.forEach(function(item) {
     item.addEventListener('change', () => {
-        // showAllCards(cards);
 
         checkFilterPrice(cards);
 
         let cardsActive = document.querySelectorAll('.card_active');
 
         if(checkFilterActive(categoryInputs) > 0) {
-            hiddenAllCards(cards);
-            checkFilter(cardsActive, categoryInputs);
+            hiddenAllCards(cardsActive);
+            checkFilter(cardsActive, categoryInputs, 'data-category');
         }
-        
+
+        cardsActive = document.querySelectorAll('.card_active');
+
+        if(checkFilterActive(brendInputs) > 0) {
+            hiddenAllCards(cardsActive);
+            checkFilter(cardsActive, brendInputs, 'data-brand');
+        }
     });
 });
